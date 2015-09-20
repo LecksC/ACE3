@@ -25,6 +25,8 @@ TRACE_2("params",_vehicle,_amount);
 // Exit if ace_cargo is not loaded
 if !(["ace_cargo"] call EFUNC(common,isModLoaded)) exitWith {};
 
+if !(local _vehicle) exitWith {};
+
 // Collect until SettingsInitialized
 if (!EGVAR(common,settingsInitFinished)) exitWith {
     EGVAR(common,runAtSettingsInitialized) pushBack [FUNC(addSpareParts), _this];
