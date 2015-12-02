@@ -54,7 +54,7 @@ if (_show) then {
         _allInjuryTexts = [];
         _genericMessages = [];
 
-        if (GVAR(level) >= 2) then {
+        if (GVAR(level) >= 2 && {([_unit] call FUNC(hasMedicalEnabled))}) then {
             _partText = [LSTRING(Head), LSTRING(Torso), LSTRING(LeftArm) ,LSTRING(RightArm) ,LSTRING(LeftLeg), LSTRING(RightLeg)] select _selectionN;
             _genericMessages pushback [localize _partText, [1, 1, 1, 1]];
         };
@@ -87,7 +87,7 @@ if (_show) then {
 
         _damaged = [false, false, false, false, false, false];
         _selectionBloodLoss = [0,0,0,0,0,0];
-        if (GVAR(level) >= 2) then {
+        if (GVAR(level) >= 2 && {([_target] call FUNC(hasMedicalEnabled))}) then {
             _openWounds = _target getvariable [QGVAR(openWounds), []];
             private "_amountOf";
             {
@@ -133,10 +133,10 @@ if (_show) then {
         } else {
             _damaged = [true, true, true, true, true, true];
             {
-                _selectionBloodLoss set [_forEachIndex, _target getHitPointDamage _x];
-
-                if (_target getHitPointDamage _x > 0 && {_forEachIndex == _selectionN}) then {
-                    _pointDamage = _target getHitPointDamage _x;
+                private _hitPoint = [_target, _x, true] call FUNC(translateSelections);
+                _selectionBloodLoss set [_forEachIndex, _target getHitPointDamage _hitPoint];
+                if (_target getHitPointDamage _hitPoint > 0 && {_forEachIndex == _selectionN}) then {
+                    _pointDamage = _target getHitPointDamage _hitPoint;
                     _severity = switch (true) do {
                         case (_pointDamage > 0.5): {localize LSTRING(HeavilyWounded)};
                         case (_pointDamage > 0.1): {localize LSTRING(LightlyWounded)};
@@ -152,7 +152,7 @@ if (_show) then {
                     ] select _forEachIndex);
                     _allInjuryTexts pushBack [format ["%1 %2", _severity, toLower _part], [1,1,1,1]];
                 };
-            } forEach ["HitHead", "HitBody", "HitLeftArm", "HitRightArm", "HitLeftLeg", "HitRightLeg"];
+            } forEach GVAR(SELECTIONS);
         };
 
         // Handle the body image coloring
@@ -209,7 +209,7 @@ if (_show) then {
             };
 
             {
-                if (typeName _x == "STRING" && {isLocalized _x}) then {
+                if (_x isEqualType "" && {isLocalized _x}) then {
                     _arguments set [_foreachIndex, localize _x];
                 };
             } foreach _arguments;

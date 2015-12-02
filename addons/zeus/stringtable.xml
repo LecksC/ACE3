@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project name="ACE">
     <Package name="Zeus">
         <Key ID="STR_ACE_Zeus_Settings_DisplayName">
@@ -21,7 +21,7 @@
             <Portuguese>Proporciona controle sobre diversos aspectos do Zeus.</Portuguese>
             <French>Fourni le contrôle des différents aspects de Zeus</French>
             <Hungarian>Különböző beállítási lehetőségeket biztosít a Zeus részeihez.</Hungarian>
-            <Russian>Обеспечивает контроль над различными аспектами работы Зевса.</Russian>
+            <Russian>Позволяет контролировать различные аспекты Зевса.</Russian>
         </Key>
         <Key ID="STR_ACE_Zeus_ascension_DisplayName">
             <English>Ascension Messages</English>
@@ -194,6 +194,7 @@
             <Portuguese>Definir médico</Portuguese>
             <Russian>Назначить медиком</Russian>
             <Czech>Přiřadit Zdravotníka</Czech>
+            <Spanish>Asignar médico</Spanish>
         </Key>
         <Key ID="STR_ACE_Zeus_ModuleSetMedicalVehicle_DisplayName">
             <English>Assign Medical Vehicle</English>
@@ -201,6 +202,7 @@
             <Portuguese>Definir veículo médico</Portuguese>
             <Russian>Назначить медицинским транспортом</Russian>
             <Czech>Přiřadit Zdravotnické Vozidlo</Czech>
+            <Spanish>Asignar vehículo médico</Spanish>
         </Key>
         <Key ID="STR_ACE_Zeus_ModuleSetMedicalFacility_DisplayName">
             <English>Assign Medical Facility</English>
@@ -208,6 +210,31 @@
             <Portuguese>Definir instalação médica</Portuguese>
             <Russian>Назанчить медицинским сооружением</Russian>
             <Czech>Přiřadit Zdravotnické Zařízení</Czech>
+            <Spanish>Asignar instalación médica</Spanish>
+        </Key>
+        <Key ID="STR_ACE_Zeus_ModuleAddSpareWheel_DisplayName">
+            <English>Add Spare Wheel</English>
+            <Portuguese>Adicionar roda sobressalente</Portuguese>
+            <Polish>Dodaj koło zapasowe</Polish>
+            <Russian>Добавить запасное колесо</Russian>
+        </Key>
+        <Key ID="STR_ACE_Zeus_ModuleAddSpareWheel_Description">
+            <English>Adds a Spare Wheel to the vehicle</English>
+            <Portuguese>Adiciona uma roda sobressalente ao veículo</Portuguese>
+            <Polish>Dodaje koło zapasowe do pojazdu</Polish>
+            <Russian>Добавляет запасное колесо в транспорт</Russian>
+        </Key>
+        <Key ID="STR_ACE_Zeus_ModuleAddSpareTrack_DisplayName">
+            <English>Add Spare Track</English>
+            <Portuguese>Adicionar esteira sobressalente</Portuguese>
+            <Polish>Dodaj zapasową gąsienicę</Polish>
+            <Russian>Дабавить запасную гусеницу</Russian>
+        </Key>
+        <Key ID="STR_ACE_Zeus_ModuleAddSpareTrack_Description">
+            <English>Adds a Spare Track to the vehicle</English>
+            <Portuguese>Adiciona uma esteira sobressalente ao veículo</Portuguese>
+            <Polish>Dodaje zapasową gąsienicę do pojazdu</Polish>
+            <Russian>Добавляет запасную гусеницу в транспорт</Russian>
         </Key>
         <Key ID="STR_ACE_Zeus_OnlyAlive">
             <English>Unit must be alive</English>
@@ -238,12 +265,26 @@
             <Polish>Jednostka musi być budynkiem</Polish>
             <Portuguese>Unidade deve ser uma estrutura</Portuguese>
             <Russian>Юнит должен быть строением</Russian>
+            <Spanish>La unidad debe ser una estructura</Spanish>
         </Key>
         <Key ID="STR_ACE_Zeus_OnlyVehicles">
             <English>Unit must be a vehicle</English>
             <Polish>Jednostka musi być pojazdem</Polish>
             <Portuguese>Unidade deve ser um veículo</Portuguese>
             <Russian>Юнит должен быть транспортом</Russian>
+            <Spanish>La unidad debe ser un vehículo</Spanish>
+        </Key>
+        <Key ID="STR_ACE_Zeus_OnlyVehiclesWithCargo">
+            <English>Unit must be a vehicle with cargo space</English>
+            <Portuguese>Unidade deve ser um veículo com espaço em carga</Portuguese>
+            <Polish>Jednostka musi być pojazdem z wolną przestrzenią cargo</Polish>
+            <Russian>Юнит должен быть транспортом с грузовым отсеком</Russian>
+        </Key>
+        <Key ID="STR_ACE_Zeus_OnlyEnoughCargoSpace">
+            <English>Unit must have cargo space left</English>
+            <Portuguese>Unidade deve conter espaço sobressalente</Portuguese>
+            <Polish>Jednostka musi mieć wolną przestrzeń cargo</Polish>
+            <Russian>Юнит должен иметь свободное место в грузовом отсеке</Russian>
         </Key>
         <Key ID="STR_ACE_Zeus_OnlyNonCaptive">
             <English>Unit must not be captive</English>
@@ -284,12 +325,14 @@
             <Polish>Dodaj obiekt do kuratora</Polish>
             <Portuguese>Adicionar objetos para o Curator</Portuguese>
             <Russian>Добавить объекты куратору</Russian>
+            <Spanish>Agregar objetos al director</Spanish>
         </Key>
         <Key ID="STR_ACE_Zeus_AddObjectsToCurator_desc">
             <English>Adds any spawned object to all curators in the mission</English>
             <Polish>Dodaje każdy zespawnowany obiekt do wszystkich kuratorów podczas misji</Polish>
             <Portuguese>Adicionar qualquer objeto criado para todos os curators na missão</Portuguese>
             <Russian>Добавляет любой отспавненный объект всем кураторам в миссии</Russian>
+            <Spanish>Añadir cualquier objeto creado a todos los directores en la misión</Spanish>
         </Key>
     </Package>
 </Project>

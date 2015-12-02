@@ -65,7 +65,7 @@ if (isText (_config >> "Condition")) then {
         } else {
             _condition = missionNamespace getvariable _condition;
         };
-        if (typeName _condition == "BOOL") then {
+        if (_condition isEqualType false) then {
             _return = _condition;
         } else {
             _return = [_caller, _target, _selectionName, _className] call _condition;
@@ -98,12 +98,13 @@ if ("All" in _locations) then {
         if !(isnil _x) exitwith {
             private "_val";
             _val = missionNamespace getvariable _x;
-            if (typeName _val == "SCALAR") then {
+            if (_val isEqualType 0) then {
                 _return = switch (_val) do {
-                    case 0: {true};
-                    case 1: _medVeh;
-                    case 2: _medFacility;
-                    case 3: {call _medFacility || call _medVeh};
+                    case 0: {true}; //AdvancedMedicalSettings_anywhere
+                    case 1: {call _medVeh}; //AdvancedMedicalSettings_vehicle
+                    case 2: {call _medFacility}; //AdvancedMedicalSettings_facility
+                    case 3: {(call _medFacility) || {call _medVeh}}; //AdvancedMedicalSettings_vehicleAndFacility
+                    default {false}; //Disabled
                 };
             };
         };
@@ -204,7 +205,7 @@ _treatmentTime = if (isNumber (_config >> "treatmentTime")) then {
         } else {
             _treatmentTimeConfig = missionNamespace getvariable _treatmentTimeConfig;
         };
-        if (typeName _treatmentTimeConfig == "SCALAR") exitwith {
+        if (_treatmentTimeConfig isEqualType 0) exitwith {
             _treatmentTimeConfig;
         };
         [_caller, _target, _selectionName, _className] call _treatmentTimeConfig;

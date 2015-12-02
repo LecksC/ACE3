@@ -29,13 +29,9 @@ if (isNull (call BIS_fnc_displayMission)) exitWith {
     }, 1, _this] call CBA_fnc_addPerFrameHandler;
 };
 
-private ["_onOK", "_onCancel"];
+params ["_textHeader", "_textMessage", ["_onOK", {}], ["_onCancel", {}]];
 
-PARAMS_2(_textHeader,_textMessage);
-_onOK = ARR_SELECT(_this,2,{});
-_onCancel = ARR_SELECT(_this,3,{});
-
-if (typeName _textMessage == "STRING") then {
+if (_textMessage isEqualType "") then {
     _textMessage = parseText _textMessage;
 };
 

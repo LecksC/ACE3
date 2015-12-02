@@ -22,4 +22,10 @@ class ACE_Settings {
         value = 1;
         isClientSettable = 1;
     };
+    class GVAR(maxRange) {
+        //for ref: 3d interaction (MEDICAL_ACTION_DISTANCE) is 1.75
+        value = 3;
+        typeName = "SCALAR";
+        category = ECSTRING(medical,Category_Medical);
+    };
 };
