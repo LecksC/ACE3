@@ -102,35 +102,44 @@ class CfgVehicles {
 	// Benches
 	class Land_Bench_01_F : House_Small_F {
         XEH_ENABLED;
-        MACRO_SEAT_ACTION
         GVAR(canSit) = 1;
         GVAR(sitDirection) = 180;
         GVAR(sitPosition[]) = {0, -0.1, -1}; // Z must be -1 due to chair's geometry (magic floating seat point)
         GVAR(sitRotation) = 2;		
+		EGVAR(dragging,canCarry) = 1;
+        EGVAR(dragging,carryPosition[]) = {0, 0.75, 0.5};
+        EGVAR(dragging,carryDirection) = 180;
 	};
 	class Land_Bench_02_F : House_Small_F {
         XEH_ENABLED;
-        MACRO_SEAT_ACTION
         GVAR(canSit) = 1;
         GVAR(sitDirection) = 180;
         GVAR(sitPosition[]) = {0, -0.1, -1}; // Z must be -1 due to chair's geometry (magic floating seat point)
         GVAR(sitRotation) = 2;		
+		EGVAR(dragging,canCarry) = 1;
+        EGVAR(dragging,carryPosition[]) = {0, 0.75, 0.5};
+        EGVAR(dragging,carryDirection) = 180;
 	};
 	class Thing_EP1;
 	class Land_Bench_EP1 : Thing_EP1 {
         XEH_ENABLED;
-        MACRO_SEAT_ACTION
         GVAR(canSit) = 1;
         GVAR(sitDirection) = 90;
         GVAR(sitPosition[]) = {0, -0.1, -1}; // Z must be -1 due to chair's geometry (magic floating seat point)
         GVAR(sitRotation) = 2;		
+		EGVAR(dragging,canCarry) = 1;
+        EGVAR(dragging,carryPosition[]) = {0, 0.75, 0.5};
+        EGVAR(dragging,carryDirection) = 180;
 	};
 	class Land_Bench_F : Furniture_base_F {
         XEH_ENABLED;
-        MACRO_SEAT_ACTION
+        
         GVAR(canSit) = 1;
         GVAR(sitDirection) = 90;
         GVAR(sitPosition[]) = {0, -0.1, -1}; // Z must be -1 due to chair's geometry (magic floating seat point)
         GVAR(sitRotation) = 2;		
+		EGVAR(dragging,canCarry) = 1;
+        EGVAR(dragging,carryPosition[]) = {0, 0.75, 0.5};
+        EGVAR(dragging,carryDirection) = 180;
 	};
 };

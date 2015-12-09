@@ -153,7 +153,7 @@ def main():
     rootDir = "../addons"
     if (os.path.exists("addons")):
         rootDir = "addons"
-
+    rootDir = "/ASOR"
     for root, dirnames, filenames in os.walk(rootDir + '/' + args.module):
       for filename in fnmatch.filter(filenames, '*.sqf'):
         sqf_list.append(os.path.join(root, filename))
