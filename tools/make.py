@@ -908,7 +908,7 @@ See the make.cfg file for additional build options.
         work_drive = cfg.get(make_target, "work_drive",  fallback="P:\\")
 
         # Private key path
-        key = cfg.get(make_target, "key", fallback=None)
+        key_name = cfg.get(make_target, "key", fallback=key_name)
 
         # Private key creation directory
         private_key_path = cfg.get(make_target, "private_key_path", fallback=os.path.join(work_drive, "private_keys"))
@@ -952,7 +952,7 @@ See the make.cfg file for additional build options.
         extensions_root = os.path.join(module_root_parent, "extensions")
 
         commit_id = get_commit_ID()
-        key_name = versionStamp = get_private_keyname(commit_id)
+        versionStamp = get_private_keyname(commit_id)
         print_green ("module_root: {}".format(module_root))
 
         if (os.path.isdir(module_root)):
@@ -1061,7 +1061,7 @@ See the make.cfg file for additional build options.
         # Make the key specified from command line if necessary.
         if new_key:
             if not os.path.isfile(os.path.join(private_key_path, key_name + ".biprivatekey")):
-                print_yellow("\nRequested key does not exist.")
+                print_yellow("\nRequested key does not exist: {}".format(os.path.join(private_key_path, key_name + ".biprivatekey")))
                 try:
                     os.makedirs(private_key_path)
                 except:
