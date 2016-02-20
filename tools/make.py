@@ -715,7 +715,7 @@ def get_commit_ID():
         print_error("FAILED TO DETERMINE COMMIT ID.")
         print_yellow("Verify that \GIT\BIN or \GIT\CMD is in your system path or user path.")
         commit_id = "NOGIT"
-        raise
+      #  raise
     finally:
         pass
         os.chdir(curDir)
